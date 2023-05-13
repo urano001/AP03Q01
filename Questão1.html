@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de formulário</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+          
+          <style>
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+            th, td {
+              text-align: left;
+              padding: 8px;
+            }
+            th {
+              background-color: #4CAF50;
+              color: white;
+            }
+            tr:nth-child(even) {background-color: #f2f2f2;}
+          </style>
+        </head>
+        <body>
+        
+        <h2>Tabela de Formulário</h2>
+        
+        <form action="/action_page.php">
+          <table>
+            <tr>
+              <th>Item</th>
+              <th>Descrição</th>
+              <th>Quantidade</th>
+              <th>PÇ UNIT</th>
+              <th>PÇ TOTAL</th>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>Processadores i3</td>
+              <td>10</td>
+              <td>R$ 150,00</td>
+              <td>R$ 1.500,00</td>
+            </tr>
+            <tr>
+              <td>02</td>
+              <td>Processadores i5</td>
+              <td>15</td>
+              <td>R$ 200,00</td>
+              <td>R$ 3.000,00</td>
+            </tr>
+            <tr>
+              <td>03</td>
+              <td>Processadores i7</td>
+              <td>5</td>
+              <td>R$ 500,00</td>
+              <td>R$ 2.500,00</td>
+            </tr>
+            <tr>
+              <td>04</td>
+              <td>Memória RAM 4GB DDR3</td>
+              <td>10</td>
+              <td>R$ 50,00</td>
+              <td>R$ 500,00</td>
+        
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Memória RAM 8GB DDR3</td>
+                <td>10</td>
+                <td>R$ 100,00</td>
+                <td>R$ 1000,00</td>
+          
+              </tr>
+        
+          </table>
+        
+        </form>
+        <script>
+ 
+        var precoTotal = [1500.00, 3000.00, 2500.00, 500.00, 1000.00];
+        var quantidade = [10, 15, 5, 10, 10];
+        
+        var total = 0;
+        for (var i = 0; i < precoTotal.length; i++) {
+            total += precoTotal[i] = quantidade[i];
+        }
+        
+        document.write("<p>Total: R$" + total.toFixed(2) + "</p>");
+        
+        var pcts = document.querySelectorAll("table tr td:nth-child(5)");
+        for (var i = 0; i < pcts.length; i++) {
+            if (i < precoTotal.length) {
+                pcts[i].innerHTML = "R$ " + precoTotal[i].toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>
